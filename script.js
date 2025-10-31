@@ -1,25 +1,31 @@
-// Mobile Menu
-document.querySelector('.hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('active'));
-
-// Lang Toggle (Simple – swap text)
-document.querySelector('.lang-toggle').addEventListener('change', (e) => {
-  if (e.target.value === 'KR') document.documentElement.lang = 'ko';
-  else document.documentElement.lang = 'en';
+// Mobile Menu Toggle
+document.querySelector('.nav-toggle').addEventListener('click', () => {
+  document.querySelector('.nav-menu').classList.toggle('active');
 });
 
-// Glitch Easter Egg: Type "IST"
-let typed = ''; document.addEventListener('keydown', e => {
-  typed += e.key.toUpperCase();
-  if (typed.includes('IST')) {
-    document.body.classList.add('glitch-mode');
-    setTimeout(() => document.body.classList.remove('glitch-mode'), 2000);
-    typed = '';
-  }
-  if (typed.length > 3) typed = '';
+// Language Toggle (Placeholder)
+document.querySelector('.lang-select').addEventListener('change', (e) => {
+  alert(`Language switched to: ${e.target.value === 'kr' ? '한국어' : 'English'}`);
 });
-const style = document.createElement('style');
-style.textContent = '.glitch-mode .glitch { animation:glitch 0.1s infinite !important; }';
-document.head.appendChild(style);
 
 // Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', e => { e.preventDefault(); document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior:'smooth' }); }); });
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// Fade In on Scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.feature-card').forEach(card => {
+  card.style.opacity = '0';
+  observer.observe(card);
+});
