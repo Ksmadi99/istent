@@ -1,24 +1,25 @@
 // Mobile Menu
-document.querySelector('.hamburger').onclick = () => {
-  document.querySelector('.nav-links').classList.toggle('active');
-};
+document.querySelector('.hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('active'));
 
-// Easter Egg: Type "1st"
-let code = '';
-document.addEventListener('keydown', e => {
-  code += e.key.toLowerCase();
-  if (code.includes('1st')) {
-    document.body.classList.add('glitch-mode');
-    setTimeout(() => document.body.classList.remove('glitch-mode'), 3000);
-    code = '';
-  }
-  if (code.length > 5) code = code.slice(-3);
+// Lang Toggle (Simple – swap text)
+document.querySelector('.lang-toggle').addEventListener('change', (e) => {
+  if (e.target.value === 'KR') document.documentElement.lang = 'ko';
+  else document.documentElement.lang = 'en';
 });
 
-// Add glitch mode style
+// Glitch Easter Egg: Type "IST"
+let typed = ''; document.addEventListener('keydown', e => {
+  typed += e.key.toUpperCase();
+  if (typed.includes('IST')) {
+    document.body.classList.add('glitch-mode');
+    setTimeout(() => document.body.classList.remove('glitch-mode'), 2000);
+    typed = '';
+  }
+  if (typed.length > 3) typed = '';
+});
 const style = document.createElement('style');
-style.textContent = `
-  .glitch-mode * { animation: glitch 0.1s infinite !important; }
-  .glitch-mode .hero-bg { filter: hue-rotate(180deg) saturate(200%); }
-`;
+style.textContent = '.glitch-mode .glitch { animation:glitch 0.1s infinite !important; }';
 document.head.appendChild(style);
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', e => { e.preventDefault(); document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior:'smooth' }); }); });
