@@ -1,0 +1,38 @@
+/* ==== COLOR PALETTE ==== */
+:root {
+  --primary: #00AEEF;     /* Electric Blue – futuristic, trustworthy */
+  --accent: #ff4d4d;      /* Neon Red – glitch energy */
+  --bg: #0a0a0a;          /* Dark – premium K-pop vibe */
+  --text: #f0f0f0;
+  --card-bg: #111;
+}
+
+/* ==== TYPOGRAPHY ==== */
+body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--text); }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+/* ==== GLITCH ANIMATION ==== */
+.glitch {
+  position: relative; color: var(--primary); font-size: 6rem; animation: glitch 2s infinite;
+}
+.glitch::before, .glitch::after {
+  content: attr(data-text); position: absolute; top:0; left:0; width:100%;
+}
+.glitch::before { animation: glitch-1 0.5s infinite; color: var(--accent); clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
+.glitch::after  { animation: glitch-2 0.5s infinite; color: #00ffcc; clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%); }
+
+/* ==== RESPONSIVE GRID ==== */
+.artist-grid, .features, .timeline {
+  display: grid; gap: 2rem; padding: 2rem;
+}
+.artist-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.features { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+/* ==== MOBILE MENU ==== */
+.hamburger { display: none; }
+@media (max-width: 768px) {
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: var(--bg); }
+  .nav-links.active { display: flex; }
+  .hamburger { display: block; cursor: pointer; font-size: 1.5rem; }
+  .glitch { font-size: 3.5rem; }
+}
