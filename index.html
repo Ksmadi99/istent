@@ -3,69 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="IST Entertainment – 14 Years of K-pop Innovation. Home to ATBO and rising trainees under Beyond Music." />
-  <title>IST Entertainment | Official Corporate Site</title>
+  <meta name="description" content="IST Entertainment – 14 Years of K-pop Rhythm. ATBO, Trainees, Beyond Music." />
+  <title>IST Entertainment</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;500;700&family=Neue+Haas+Grotesk+Display+Pro:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- NAV -->
   <nav class="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo">
-        <img src="assets/logo.svg" alt="IST Logo" />
-        <span>IST Entertainment</span>
+      <a href="#" class="logo">
+        <div class="logo-ripple"></div>
+        <span>IST</span>
       </a>
       <ul class="nav-menu">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="artists.html">Artists</a></li>
-        <li><a href="history.html">History</a></li>
-        <li><a href="news.html">News</a></li>
+        <li><a href="#artists">Artists</a></li>
+        <li><a href="#timeline">Journey</a></li>
+        <li><a href="#concert">Live</a></li>
+        <li><a href="#join">Join</a></li>
       </ul>
       <div class="nav-toggle">☰</div>
-      <select class="lang-select">
-        <option value="en">EN</option>
-        <option value="kr">KR</option>
-      </select>
     </div>
   </nav>
 
   <!-- HERO -->
   <header class="hero">
-    <div class="hero-bg"></div>
+    <div class="ripple-container">
+      <div class="ripple ripple-1"></div>
+      <div class="ripple ripple-2"></div>
+      <div class="ripple ripple-3"></div>
+    </div>
     <div class="container hero-content">
-      <h1>IST Entertainment</h1>
-      <p class="tagline">14 Years of Innovation. Pioneering Tomorrow’s K-pop.</p>
-      <div class="cta-group">
-        <a href="artists.html" class="btn-primary">Our Artists</a>
-        <a href="history.html" class="btn-secondary">Our Journey</a>
-      </div>
+      <h1>IST</h1>
+      <p class="tagline">14 Years. One Beat.</p>
+      <a href="#artists" class="btn-vibe">Feel It</a>
     </div>
   </header>
 
-  <!-- FEATURES -->
-  <section class="features">
+  <!-- ARTISTS -->
+  <section id="artists" class="artists">
     <div class="container">
-      <div class="feature-grid">
-        <div class="feature-card">
+      <h2>Current Beat</h2>
+      <div class="artist-grid">
+        <div class="artist-card" style="--delay: 0.1s;">
+          <div class="card-ripple"></div>
           <h3>ATBO</h3>
-          <p>Debut 2022 | 7 Members | Survival-Born Powerhouse</p>
+          <p>7 Members · Debut 2022</p>
         </div>
-        <div class="feature-card">
-          <h3>Beyond Music</h3>
-          <p>Acquired Feb 2025 | Global Expansion Partner</p>
-        </div>
-        <div class="feature-card">
-          <h3>Trainee Program</h3>
-          <p>Park Dong-gyu, Kim Sihwan & Rising Stars</p>
+        <div class="artist-card" style="--delay: 0.2s;">
+          <div class="card-ripple"></div>
+          <h3>Park Dong-gyu</h3>
+          <p>Trainee · Rising Star</p>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
+  <!-- TIMELINE -->
+  <section id="timeline" class="timeline">
     <div class="container">
-      <p>© 2025 IST Entertainment. All Rights Reserved. | <a href="news.html#auditions">Auditions Open</a></p>
+      <h2>Journey</h2>
+      <div class="timeline-line">
+        <div class="point" data-year="2011">A Cube</div>
+        <div class="point" data-year="2021">IST Born</div>
+        <div class="point" data-year="2022">ATBO</div>
+        <div class="point" data-year="2025">Beyond</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCERT -->
+  <section id="concert" class="concert">
+    <div class="container">
+      <h2>IST LIVE 2025</h2>
+      <p class="chant">I–S–T! I–S–T!</p>
+      <a href="#" class="btn-live">Get Tickets</a>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section id="join" class="join">
+    <div class="container">
+      <h2>Join the Beat</h2>
+      <p>Auditions open. Next wave starts now.</p>
+      <a href="#" class="btn-join">Apply</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 IST Entertainment</p>
     </div>
   </footer>
 
