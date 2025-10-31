@@ -70,22 +70,24 @@ h2 { font-family:'Neue Haas Grotesk Display Pro',sans-serif; font-size:2.8rem; c
 .artist-card:hover { transform:translateY(-10px); box-shadow:0 15px 40px rgba(255,46,99,0.15); }
 
 /* TIMELINE */
-.timeline { padding:5rem 0; }
-.timeline-line { 
-  position:relative; max-width:800px; margin:auto; 
-  border-left:3px dashed var(--vibe-pink); padding-left:2rem;
+.orbit-timeline { padding:8rem 0; position:relative; overflow:hidden; }
+.orbit-center { 
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); 
+  width:80px; height:80px; background:var(--vibe-pink); color:white; 
+  border-radius:50%; display:flex; align-items:center; justify-content:center; 
+  font-weight:700; font-size:1.5rem; z-index:10; box-shadow:0 0 30px rgba(255,46,99,0.5);
 }
-.point { 
-  background:var(--pure-white); padding:1rem 1.5rem; border-radius:50px; 
-  margin:2rem 0; box-shadow:0 4px 15px rgba(0,0,0,0.05); 
-  position:relative; font-weight:500;
+.orbit-path { 
+  width:500px; height:500px; border:2px dashed rgba(255,46,99,0.3); 
+  border-radius:50%; position:relative; margin:auto; animation:spin 20s linear infinite;
 }
-.point::before { 
-  content:attr(data-year); position:absolute; left:-3.5rem; top:50%; 
-  transform:translateY(-50%); background:var(--vibe-pink); color:white; 
-  width:50px; height:50px; border-radius:50%; display:flex; align-items:center; 
-  justify-content:center; font-size:0.8rem; font-weight:700;
+.card-orbit { 
+  position:absolute; width:120px; padding:1rem; background:var(--pure-white); 
+  text-align:center; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.1); 
+  font-weight:600; top:50%; left:50%; transform:translate(-50%,-50%) rotate(calc(var(--angle) * 1deg)) 
+  translateX(200px) rotate(calc(var(--angle) * -1deg));
 }
+@keyframes spin { to { transform:rotate(360deg); } }
 
 /* CONCERT & JOIN */
 .concert, .join { padding:5rem 0; text-align:center; background:var(--pure-white); }
