@@ -1,51 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IST Entertainment – Pioneers of Tomorrow</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IST Entertainment – 14 Years of K-pop Innovation. Home to ATBO and rising trainees under Beyond Music." />
+  <title>IST Entertainment | Official Corporate Site</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- NAV -->
   <nav class="navbar">
-    <div class="logo">IST</div>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="artists.html">Artists</a></li>
-      <li><a href="history.html">History</a></li>
-      <li><a href="news.html">News</a></li>
-    </ul>
-    <div class="hamburger">☰</div>
-    <select class="lang-toggle">
-      <option>EN</option>
-      <option>KR</option>
-    </select>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" alt="IST Logo" />
+        <span>IST Entertainment</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="artists.html">Artists</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+      <div class="nav-toggle">☰</div>
+      <select class="lang-select">
+        <option value="en">EN</option>
+        <option value="kr">KR</option>
+      </select>
+    </div>
   </nav>
 
+  <!-- HERO -->
   <header class="hero">
     <div class="hero-bg"></div>
-    <div class="hero-content">
-      <h1 class="glitch" data-text="1ST">1ST</h1>
-      <h1 class="glitch" data-text="IST">IST</h1>
-      <p>From a registry glitch to K-pop legacy. Est. 2021 under Beyond Music.</p>
-      <a href="artists.html" class="btn">Explore Artists</a>
+    <div class="container hero-content">
+      <h1>IST Entertainment</h1>
+      <p class="tagline">14 Years of Innovation. Pioneering Tomorrow’s K-pop.</p>
+      <div class="cta-group">
+        <a href="artists.html" class="btn-primary">Our Artists</a>
+        <a href="history.html" class="btn-secondary">Our Journey</a>
+      </div>
     </div>
   </header>
 
-  <section class="quick-links">
-    <div class="card">
-      <h3>ATBO</h3>
-      <p>Debut 2022 | 7 Members</p>
-    </div>
-    <div class="card">
-      <h3>Trainees</h3>
-      <p>Park Dong-gyu, Kim Sihwan & More</p>
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>ATBO</h3>
+          <p>Debut 2022 | 7 Members | Survival-Born Powerhouse</p>
+        </div>
+        <div class="feature-card">
+          <h3>Beyond Music</h3>
+          <p>Acquired Feb 2025 | Global Expansion Partner</p>
+        </div>
+        <div class="feature-card">
+          <h3>Trainee Program</h3>
+          <p>Park Dong-gyu, Kim Sihwan & Rising Stars</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 IST Entertainment. All Rights Reserved. | <a href="news.html">Auditions</a></p>
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 IST Entertainment. All Rights Reserved. | <a href="news.html#auditions">Auditions Open</a></p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
